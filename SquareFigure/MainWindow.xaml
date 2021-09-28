@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SquareFigure"
         mc:Ignorable="d"
-        Title="SquareFigure" Height="500" Width="800" MinHeight="300" MinWidth="500">
+        Title="SquareFigure" Height="500" Width="800" MinHeight="300" MinWidth="500"
+        FontFamily="Times New Roman" FontStyle="Italic">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -13,7 +14,7 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <TextBlock Text="Приложение для подсчета площади"/>
+            <TextBlock Text="Приложение для подсчета площади" Style="{StaticResource TBStyle}"/>
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel>
@@ -54,7 +55,7 @@
                 </StackPanel>
                 <StackPanel Name="squareTreagleABC" Visibility="Collapsed">
                     <WrapPanel Orientation="Horizontal">
-                        <TextBlock >Введите первую сторону</TextBlock>
+                        <TextBlock>Введите первую сторону</TextBlock>
                         <TextBox Name="TBOneTreagle" Width="300"/>
                         <TextBlock>Введите вторую сторону</TextBlock>
                         <TextBox Name="TBTwoTreagle" Width="300"/>
@@ -62,14 +63,14 @@
                         <TextBox Name="TBThreeTreagle" Width="300"/>
                     </WrapPanel>
                 </StackPanel>
-                <DockPanel>
-                    <Button Content="Получить результат" Click="Button_Click"/>
-                    <Button Content="Очистить форму" Width="150"/>
-                </DockPanel>
+                <StackPanel>
+                    <Button  Margin="5" Template="{StaticResource CTButon}" Content="Получить результат" Click="Button_Click"/>
+                    <Button Content="Очистить форму" Template="{StaticResource CTButon}"/>
+                </StackPanel>
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="2">
-            <TextBlock>Результат</TextBlock>
+            <TextBlock Style="{StaticResource TBStyle}">Результат</TextBlock>
             <TextBlock Name="TBlResult">Здесь будет результат</TextBlock>
         </StackPanel>
     </Grid>

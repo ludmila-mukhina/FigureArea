@@ -4,6 +4,42 @@
              xmlns:local="clr-namespace:SquareFigure"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="TBStyle" TargetType="TextBlock">
+            <Style.Setters>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Green"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="24"/>
+                    <Setter Property="Foreground" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TextBlock">   <!--стиль по умолчанию-->
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Padding" Value="2"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="24"/>
+                    <Setter Property="Foreground" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Width" Value="300"/>
+        </Style>
+        <ControlTemplate x:Key="CTButon" TargetType="Button">
+            <Border CornerRadius="25,10,25,10" BorderBrush="Black" BorderThickness="2"
+                    Background="LightBlue" Width="300">
+                <ContentControl Content="{TemplateBinding Content}" HorizontalAlignment="Center" Margin="10"/>
+            </Border>
+        </ControlTemplate>
     </Application.Resources>
 </Application>
