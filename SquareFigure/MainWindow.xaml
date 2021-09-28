@@ -1,0 +1,76 @@
+﻿<Window x:Class="SquareFigure.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SquareFigure"
+        mc:Ignorable="d"
+        Title="SquareFigure" Height="500" Width="800" MinHeight="300" MinWidth="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock Text="Приложение для подсчета площади"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Выберите фигуру для подсчета площади:</TextBlock>
+                    <RadioButton Name="RBTreagle" Margin="15,0,0,0" Checked="RBTreagle_Checked">Треугольник</RadioButton>
+                    <RadioButton Name="RBParal" Margin="15,0,0,0" Checked="RBParal_Checked">Параллелограмм</RadioButton>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Выберите способ подсчета площади</TextBlock>
+                    <ComboBox Name="CBTreagle" Width="230" HorizontalAlignment="Left" Margin="15,0,0,0" Visibility="Collapsed" IsEnabled="False" SelectionChanged="CBTreagle_SelectionChanged">
+                        <ComboBoxItem>По стороне и основанию</ComboBoxItem>
+                        <ComboBoxItem>По двум сторонам и углу между ними</ComboBoxItem>
+                        <ComboBoxItem>По трем сторонам</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox Name="CBParal" Width="230" HorizontalAlignment="Left" Margin="15,0,0,0" IsEnabled="False">
+                        <ComboBoxItem>По стороне и основанию</ComboBoxItem>
+                        <ComboBoxItem>По двум сторонам и углу между ними</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Name="squareTreagleParamAH" Visibility="Collapsed">
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock>Введите основание</TextBlock>
+                        <TextBox Name="TBBaseTreagleParal" Width="300"/>
+                        <TextBlock>Введите высоту</TextBlock>
+                        <TextBox Name="TBHeightTreagleParal" Width="200"/>
+                    </WrapPanel>
+                </StackPanel>
+                <StackPanel Name="squareTreagleParamABA" Visibility="Collapsed">
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock>Введите первую сторону</TextBlock>
+                        <TextBox Name="TBOneTreagleParal" Width="300"/>
+                        <TextBlock >Введите вторую сторону</TextBlock>
+                        <TextBox Name="TBTwoTreagleParal" Width="300"/>
+                        <TextBlock>Введите угол</TextBlock>
+                        <TextBox Name="TBAngleTreagleParal" Width="200"/>
+                    </WrapPanel>
+                </StackPanel>
+                <StackPanel Name="squareTreagleABC" Visibility="Collapsed">
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock >Введите первую сторону</TextBlock>
+                        <TextBox Name="TBOneTreagle" Width="300"/>
+                        <TextBlock>Введите вторую сторону</TextBlock>
+                        <TextBox Name="TBTwoTreagle" Width="300"/>
+                        <TextBlock>Введите третью сторону</TextBlock>
+                        <TextBox Name="TBThreeTreagle" Width="300"/>
+                    </WrapPanel>
+                </StackPanel>
+                <DockPanel>
+                    <Button Content="Получить результат" Click="Button_Click"/>
+                    <Button Content="Очистить форму" Width="150"/>
+                </DockPanel>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="2">
+            <TextBlock>Результат</TextBlock>
+            <TextBlock Name="TBlResult">Здесь будет результат</TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
